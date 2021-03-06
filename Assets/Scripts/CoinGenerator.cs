@@ -4,6 +4,7 @@ using UnityEngine;
 public class CoinGenerator : MonoBehaviour
 {
     [SerializeField] private Coin _template;
+    
     private CoinSpawn[] _spawnPoints;
 
     private void Awake()
