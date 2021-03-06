@@ -22,18 +22,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(_movementSpeed*Time.deltaTime,0,0);
-            _animator.SetBool("isRun",true);
-            _spriteRenderer.flipX = false;
-        }
-        else if(Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(_movementSpeed*Time.deltaTime * -1,0,0);
-            _animator.SetBool("isRun",true);
-            _spriteRenderer.flipX = true;
-        }
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            Run();
+        
         else if(_animator.GetBool("isRun"))
             _animator.SetBool("isRun",false);
         
@@ -47,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
     {
         _animator.SetBool("isJump",false);
         
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.GetComponent<Ground>())
             _isGrounded = true;
     }
 
@@ -55,7 +46,23 @@ public class CharacterMovement : MonoBehaviour
     {
         _animator.SetBool("isJump",true);
         
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.GetComponent<Ground>())
             _isGrounded = false;
+    }
+
+    private void Run()
+    {
+        _animator.SetBool("isRun",true);
+        
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(_movementSpeed*Time.deltaTime,0,0);
+            _spriteRenderer.flipX = false;
+        }
+        else
+        {
+            transform.Translate(_movementSpeed*Time.deltaTime * -1,0,0);
+            _spriteRenderer.flipX = true;
+        }
     }
 }

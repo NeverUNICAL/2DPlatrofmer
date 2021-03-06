@@ -1,29 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class CoinGenerator : MonoBehaviour
 {
     [SerializeField] private Coin _template;
-    [SerializeField] private int _count;
-    
-    private Coin[] _coinsRemaining;
+    private CoinSpawn[] _spawnPoints;
+
+    private void Awake()
+    {
+      _spawnPoints = GetComponentsInChildren<CoinSpawn>();
+    }
 
     void Start()
     {
         Generate();
     }
 
-    private void Update()
-    {
-        _coinsRemaining = FindObjectsOfType<Coin>();
-        if(_coinsRemaining.Length < 1)
-            Generate();
-    }
-
     private void Generate()
     {
-        for (int i = 0; i < _count; i++)
+        foreach (var point in _spawnPoints)
         {
-            Instantiate(_template,new Vector3(10 - (i*5),-0.4F,0), Quaternion.identity);
+            Instantiate(_template, point.transform.position, Quaternion.identity);
         }
     }
+    
 }

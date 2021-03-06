@@ -61,7 +61,9 @@
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\CoinGenerator.cs" />
+     <Compile Include="Assets\Scripts\CoinSpawn.cs" />
      <Compile Include="Assets\Scripts\EnemyPatrolMovement.cs" />
+     <Compile Include="Assets\Scripts\Ground.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
  <Reference Include="Unity.Timeline.Editor">

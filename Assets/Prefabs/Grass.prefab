@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5006862815328704806}
   - component: {fileID: 5006862815328704827}
   - component: {fileID: 5006862815328704804}
+  - component: {fileID: 637503000586714672}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Ground
@@ -130,3 +131,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &637503000586714672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5006862815328704807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276803ce83185544daf50f6c9ea5b503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
