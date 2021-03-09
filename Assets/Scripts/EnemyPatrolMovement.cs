@@ -28,6 +28,5 @@ public class EnemyPatrolMovement : MonoBehaviour
             else 
                 _currentMoveSpot = 0;
         }
-             
     }
 }

@@ -24,5 +24,4 @@ public class CoinGenerator : MonoBehaviour
             Instantiate(_template, point.transform.position, Quaternion.identity);
         }
     }
-    
 }
